@@ -5,8 +5,8 @@ DROP TABLE IF EXISTS instructors;
 DROP TABLE IF EXISTS students;
 
 CREATE TABLE cohorts (
-  cohort_name VARCHAR(255),
   cohort_id SERIAL PRIMARY KEY,
+  cohort_name VARCHAR(255),
   date_created TIMESTAMP NOT NULL DEFAULT NOW()
 );
 
