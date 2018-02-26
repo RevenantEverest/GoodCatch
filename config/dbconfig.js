@@ -1,7 +1,7 @@
-module.exports = process.end.DATABASE_URL || {
+module.exports = process.env.DATABASE_URL || {
   host: process.env.DB_HOST || `localhost`,
   port: process.env.DB_PORT || `5432`,
-  database: process.env.DB_NAME || `#`,
+  database: process.env.DB_NAME || `ga_db`,
   username: `stefischer`,
-  password: `s0711997`,
+  password: `s07111997`,
 };

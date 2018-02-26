@@ -1,0 +1,11 @@
+<% include ../partials/boilerplate.ejs %>
+
+    <% for (let student, cohort, instructor of data) { %>
+        <div class="goodCatchMain">
+            <p><% student.name %></p>
+            <p><% instructor.name %></p>
+            <p><% cohort.cohort_name %></p>
+        </div>
+    <% } %>
+    <script src="/js/main.js"></script>
+<% include ../partials/end.ejs %>

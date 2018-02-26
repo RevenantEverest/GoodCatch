@@ -1,6 +1,15 @@
 const cohortsDB = require(`../models/cohortsDB`);
 
 module.exports = {
+
+  addCohort(req, res, next) {
+    const blankCohort = {
+      cohort: null,
+    };
+    res.locals.cohort = blankCohort;
+    next();
+  },
+
   index(req, res, next) {
     cohortsDB.findAll()
       .then((cohorts) => {
@@ -23,7 +32,7 @@ module.exports = {
   create(req, res, next) {
     cohortsDB.save(req.body)
       .then((cohort) => {
-        res.locals.cohort = cohort;
+        res.locals.cohort = cohort,
         next();
       })
       .catch(err => next(err));

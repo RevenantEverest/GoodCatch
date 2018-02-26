@@ -10,6 +10,10 @@ const path = require(`path`);
 const PORT = process.env.PORT || 3000;
 const app = express();
 
+const cohortsRouter = require(`./routes/cohorts`);
+const instructorsRouter = require(`./routes/instructors`);
+const studentsRouter = require(`./routes/students`);
+
 /*======== MIDDLEWARE ========*/
 
 app.use(methodOverride(`_method`));
@@ -23,7 +27,7 @@ app.use(express.static(`public`));
 
 //Views Engine Config
 app.set(`views`, path.join(__dirname, `views`));
-app.set(`views engine`, `ejs`);
+app.set(`view engine`, `ejs`);
 
 //PORT Config
 app.listen(PORT, () => {
@@ -31,3 +35,13 @@ app.listen(PORT, () => {
 });
 
 /*======== ROUTES ========*/
+
+app.use(`/cohorts`, cohortsRouter);
+app.use(`/instructors`, instructorsRouter);
+app.use(`/students`, studentsRouter);
+
+
+
+app.use(`/`, (req, res) => {
+  res.render(`index.ejs`);
+})

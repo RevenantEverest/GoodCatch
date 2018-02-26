@@ -1,8 +1,8 @@
 \c ga_db;
 
-DROP TABLE IF EXISTS cohorts;
 DROP TABLE IF EXISTS instructors;
 DROP TABLE IF EXISTS students;
+DROP TABLE IF EXISTS cohorts;
 
 CREATE TABLE cohorts (
   cohort_id SERIAL PRIMARY KEY,

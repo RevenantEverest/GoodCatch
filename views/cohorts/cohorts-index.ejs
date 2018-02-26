@@ -1,0 +1,17 @@
+<% include ../partials/boilerplate.ejs %>
+  <h1 class="cohortsIndex">COHORTS</h1>
+  <div class="cohortNamesContainer">
+  <% for (let cohort of data) { %>
+      <p class="cohortNames"><%= cohort.cohort_name %></p>
+      <button class="cohortButtonEdit" type="button" class="editCohort">Edit</button>
+      <button class="cohortButtonSeeMore" type="button" class="seeMoreCohort">See More</button>
+  <% } %>
+  </div>
+  <% for (let cohort of data) { %>
+
+  <% } %>
+        <div class="addCohortContainer">
+          <button type="button" class="addCohort">Add</button>
+        </div>
+  <script src="/js/main.js"></script>
+<% include ../partials/end.ejs %>
