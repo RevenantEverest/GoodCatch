@@ -6,117 +6,22 @@ body{
   font-size: 30px;
 }
 
-p{
-  display: inline;
-}
+/*================ COHORTS ================*/
 
-/*======== COHORTS ========*/
 
-.addCohortContainer{
-  margin-top: 20px;
-}
 
-.addCohort{
-  height: 30px;
-  width: 80px;
-  text-decoration: none;
-  border-radius: 16px;
-  background-color: #dedede;
-  font-family: "Raleway", sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  border-style: solid;
-}
+/*---------------- END ----------------*/
 
-.addCohort:hover{
-  background-color: black;
-  border-color: #dedede;
-  color: #dedede;
-}
 
-.addInput{
-  border-radius: 16px;
-  border-style: solid;
-  border-color: #dedede;
-  border-width: thick;
-  text-align: center;
-}
+/*================ STUDENTS ================*/
 
-.addInputSubmit{
-  height: 30px;
-  width: 80px;
-  text-decoration: none;
-  border-radius: 16px;
-  background-color: #dedede;
-  font-family: "Raleway", sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  border-style: solid;
-}
 
-.addInputSubmit:hover{
-  background-color: black;
-  border-color: #dedede;
-  color: #dedede;
-}
 
-.addFormCohort{
-  margin-left: 600px;
-}
+/*---------------- END ----------------*/
 
-.addCohortH1{
-  text-align: center;
-}
 
-.cohortButtonEdit{
-  height: 30px;
-  width: 80px;
-  text-decoration: none;
-  border-radius: 16px;
-  background-color: #dedede;
-  font-family: "Raleway", sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  border-style: solid;
-}
+/*================ INSTRUCTORS ================*/
 
-.cohortButtonEdit:hover{
-  background-color: black;
-  border-color: #dedede;
-  color: #dedede;
-}
 
-.cohortButtonSeeMore{
-  height: 30px;
-  width: 100px;
-  text-decoration: none;
-  border-radius: 16px;
-  background-color: #dedede;
-  font-family: "Raleway", sans-serif;
-  font-weight: 800;
-  font-size: 15px;
-  border-style: solid;
-}
 
-.cohortButtonSeeMore:hover{
-  background-color: black;
-  border-color: #dedede;
-  color: #dedede;
-}
-
-.cohortNamesContainer{
-  display: inline-block;
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 16px;
-  color: black;
-  background-color: rgba(255,255,255,.7);
-}
-
-.cohortNames{
-  padding: 20px;
-}
-
-.cohortsIndex{
-  text-align: center;
-}
+/*---------------- END ----------------*/
