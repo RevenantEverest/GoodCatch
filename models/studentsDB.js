@@ -6,11 +6,11 @@ module.exports = {
   },
 
   findById(id) {
-    return db.one(`SELECT students.id AS id, name, cohort_id, catches
+    return db.one(`SELECT students.id AS id, name, cohort_name, catches
       FROM students
       JOIN cohorts
-      ON students.cohort_id = cohorts.cohorts_id
-      WHERE students.cohort_id = $1`, id);
+      ON students.cohort_id = cohorts.cohort_id
+      WHERE students.id = $1`, id);
   },
 
   save(student) {

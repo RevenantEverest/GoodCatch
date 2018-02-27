@@ -1,7 +1,17 @@
 const studentsDB = require(`../models/studentsDB`);
 
 module.exports = {
+
+  addStudent(req, res, next) {
+    const blankStudent = {
+      student: null,
+    };
+    res.locals.student = blankStudent;
+    next();
+  },
+
   index(req, res, next) {
+    console.log(`inside index`);
     studentsDB.findAll()
       .then((student) => {
         res.locals.student = student;

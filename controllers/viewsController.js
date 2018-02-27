@@ -12,10 +12,11 @@ module.exports = {
     });
   },
 
-  showOneCohort(req, res) {
+  showOneCohort(req, res, next) {
     res.render(`cohorts/cohort-single`, {
       data: res.locals.cohort,
     });
+    next();
   },
 
   showAddFormCohort(req, res) {
@@ -51,7 +52,7 @@ module.exports = {
   },
 
   showOneInstructor(req, res) {
-    res.render(`instructors/instructor-single`, {
+    res.render(`instructors/instructor-single.ejs`, {
       data: res.locals.instructor,
     });
   },

@@ -10,7 +10,7 @@ cohortsRouter.get(`/:id/edit`, cohortsController.getOne, views.showEditFormCohor
 cohortsRouter.get(`/new`, cohortsController.index, cohortsController.addCohort, views.showAddFormCohort);
 
 cohortsRouter.route(`/:id`)
-  .get(cohortsController.getOne, views.showOneCohort)
+  .get(cohortsController.getOne, cohortsController.getStudents, views.showOneCohort)
   .put(cohortsController.update, views.handleUpdateCohort)
   .delete(cohortsController.destroy, views.handleDeleteCohort);
 

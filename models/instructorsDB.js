@@ -6,8 +6,7 @@ module.exports = {
   },
 
   findById(id) {
-    return db.one(`SELECT instructors.id
-      AS id, name, cohort_id, catches
+    return db.one(`SELECT instructors.id AS id, name, cohort_name, catches
       FROM instructors
       JOIN cohorts
       ON instructors.cohort_id = cohorts.cohort_id
@@ -16,15 +15,15 @@ module.exports = {
 
   save(instructor) {
     return db.one(`INSERT INTO instructors (name, cohort_id)
-    VALUES ($/name/, $/cohort_id/)
+    VALUES ($/instructor/, $/cohort_id/)
     RETURNING *`, instructor);
   },
 
   update(instructor) {
     return db.one(`UPDATE instructors
       SET
-      name = $1
-      cohort_name = $2
+      name = $/name/
+      cohort_id = $/cohort_id/
       WHERE id = $/id/
       RETURNING *`, instructor);
   },

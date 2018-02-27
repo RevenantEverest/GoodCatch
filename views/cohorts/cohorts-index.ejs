@@ -3,8 +3,7 @@
   <div class="cohortNamesContainer">
   <% for (let cohort of data) { %>
       <p class="cohortNames"><%= cohort.cohort_name %></p>
-      <button class="cohortButtonEdit" type="button" class="editCohort">Edit</button>
-      <button class="cohortButtonSeeMore" type="button" class="seeMoreCohort">See More</button>
+      <a class="cohortButtonSeeMore seeMoreCohort" href="/cohorts/<%= cohort.cohort_id %>/">See More</a>
   <% } %>
   </div>
     <div class="addCohortContainer">

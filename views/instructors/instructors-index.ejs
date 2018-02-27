@@ -1,9 +1,13 @@
 <% include ../partials/boilerplate.ejs %>
+  <h1 class="instructorsIndex">INSTRUCTORS</h1>
+  <div class="instructorNamesContainer">
   <% for (let instructor of data) { %>
-    <div class="instructor">
-      <p><%= instructor.name %></p>
-      <button type="button">Click For Nudes</button>
-    </div>
+      <p class="instrucotrNames"><%= instructor.name %></p>
+      <a class="instructorButtonSeeMore seeMoreInstructor" href="/instructors/<%= instructor.id %>">See More</a>
   <% } %>
-  <script src="js/main.js">
-<% include ../partials/end.ejs %>js %>
+  </div>
+    <div class="addInstructorContainer">
+      <button type="button" class="addInstructor">Add</button>
+    </div>
+  <script src="/js/main.js"></script>
+<% include ../partials/end.ejs %>

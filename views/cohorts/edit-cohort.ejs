@@ -1,8 +1,8 @@
 <% include ../partials/boilerplate.ejs %>
   <h1>Edit Cohort</h1>
-  <form method="POST" action="/cohort_name/<%= data.cohort_id %>?_method=PUT">
-    <input name="id" type="hidden" value="<%= data.cohort_id %>">
-    <input name="cohort_name" type="text" value="<%= data.cohort_name %>">
+  <form method="POST" action="/cohorts/<%= data.cohort_id %>?_method=PUT">
+    <input name="id" type="hidden" value="<%= data.cohort_id %>" />
+    <input name="cohort_name" type="text" value="<%= data.cohort_name %>" />
     <input type="submit" value="Submit" />
   </form>
 <% include ../partials/end.ejs %>

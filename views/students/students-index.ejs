@@ -1,9 +1,13 @@
 <% include ../partials/boilerplate.ejs %>
+  <h1 class="studentsIndex">STUDENTS</h1>
+  <div class="studentNamesContainer">
   <% for (let student of data) { %>
-    <div class="student">
-      <p><%= student.name %></p>
-      <button type="button">Click For Nudes</button>
-    </div>
+      <p class="studentNames"><%= student.name %></p>
+      <a class="studentButtonSeeMore seeMoreStudent" href="/students/<%= student.id %>">See More</a>
   <% } %>
-  <script src="js/main.js">
+  </div>
+    <div class="addStudentContainer">
+      <button type="button" class="addStudent">Add</button>
+    </div>
+  <script src="/js/main.js"></script>
 <% include ../partials/end.ejs %>

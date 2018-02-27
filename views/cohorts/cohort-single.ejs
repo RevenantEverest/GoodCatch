@@ -1,3 +1,13 @@
 <% include ../partials/boilerplate.ejs %>
-  <h1>Cohort Single</h1>
+  <div class="cohortSingle">
+      <h1 class="cohortSingle<%= data.cohort_id %>"><%= data.cohort_name %></h1>
+      <% for (let student of data){ %>
+        <p class="cohortStudents"><%= student.name %></p>
+      <% } %>
+      <a href="/cohorts/<%= data.cohort_id %>/edit"> Edit </a>
+      <form action="/cohorts/<%= data.cohort_id %>?_method=Delete" method="POST">
+        <input type="Submit" value="Delete" />
+      </form>
+  </div>
+      <a href="/cohorts/">See All Cohorts</a>
 <% include ../partials/end.ejs %>

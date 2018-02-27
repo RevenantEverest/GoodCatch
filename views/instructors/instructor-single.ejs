@@ -1,3 +1,8 @@
 <% include ../partials/boilerplate.ejs %>
-  <h1>Instructor Single</h1>
+  <h1 class="InstructorSingle">INSTRUCTOR</h1>
+  <div class="instructorSingleContainer">
+      <p class="instructorSingle"><%= data.name %></p>
+      <a href="/instructors/<%= data.id %>/edit">Edit</a>
+  </div>
+  <script src="/js/main.js"></script>
 <% include ../partials/end.ejs %>

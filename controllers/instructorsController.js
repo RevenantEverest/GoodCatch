@@ -1,6 +1,15 @@
 const instructorsDB = require(`../models/instructorsDB`);
 
 module.exports = {
+
+  addInstructor(req, res, next) {
+    const blankInstructor = {
+      instructor: null,
+    };
+    res.locals.instructor = blankInstructor;
+    next();
+  },
+
   index(req, res, next) {
     instructorsDB.findAll()
       .then((instructor) => {
@@ -13,7 +22,6 @@ module.exports = {
   getOne(req, res, next) {
     instructorsDB.findById(req.params.id)
       .then((instructor) => {
-        console.log(instructor);
         res.locals.instructor = instructor;
         next();
       })

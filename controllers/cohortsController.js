@@ -22,8 +22,18 @@ module.exports = {
   getOne(req, res, next) {
     cohortsDB.findById(req.params.id)
       .then((cohort) => {
-        console.log(cohort);
         res.locals.cohort = cohort;
+        console.log(`Get One => ${cohort}`);
+        next();
+      })
+      .catch(err => next(err));
+  },
+
+  getStudents(req, res, next) {
+    cohortsDB.findAllStudents(req.params.id)
+      .then((cohort) => {
+        res.locals.cohort = cohort;
+        console.log(`Get Students =>` + cohort);
         next();
       })
       .catch(err => next(err));

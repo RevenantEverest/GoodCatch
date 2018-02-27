@@ -1,3 +1,13 @@
 <% include ../partials/boilerplate.ejs %>
-  <h1>Add Instructor</h1>
+  <h1 class="addInstructorHeading">Add Instructor</h1>
+  <form  class="addFormInstructor" method="POST" action="/instructors">
+    <input class="addInput" name="instructor" type="text" placeholder="Instructor Name" />
+    <select name="cohort_id">
+        <% cohorts.forEach(cohort => { %>
+          <option value="<%= cohort.cohort_id %>"><%= cohort.cohort_name %></option>
+        <% }) %>
+    </select>
+    <input class="addInputSubmit" type="submit" value="Add" />
+  </form>
+  <p class="noCohortInfo">Is your cohort not listed? add it <a class="linkToAddCohort" href="../cohorts/new">here</a>!</p>
 <% include ../partials/end.ejs %>
