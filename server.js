@@ -13,6 +13,7 @@ const app = express();
 const cohortsRouter = require(`./routes/cohorts`);
 const instructorsRouter = require(`./routes/instructors`);
 const studentsRouter = require(`./routes/students`);
+const mainRouter = require(`./routes/goodCatch`);
 
 /*======== MIDDLEWARE ========*/
 
@@ -39,6 +40,7 @@ app.listen(PORT, () => {
 app.use(`/cohorts`, cohortsRouter);
 app.use(`/instructors`, instructorsRouter);
 app.use(`/students`, studentsRouter);
+app.use(`/main`, mainRouter);
 
 
 

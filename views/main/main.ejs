@@ -1,11 +1,37 @@
 <% include ../partials/boilerplate.ejs %>
-
-    <% for (let student, cohort, instructor of data) { %>
-        <div class="goodCatchMain">
-            <p><% student.name %></p>
-            <p><% instructor.name %></p>
-            <p><% cohort.cohort_name %></p>
-        </div>
-    <% } %>
-    <script src="/js/main.js"></script>
+<nav>
+  <a class="navBar" href="../">Home</a>
+  <a class="navBar" href="../cohorts">Cohorts</a>
+  <a class="navBar" href="../instructors">Instructors</a>
+  <a class="navBar" href="../students">Students</a>
+</nav>
+<!--<h1 class="mainGoodCatch">Good Catch!</h1>-->
+<div class="goodCatch">
+    <h2 class="goodCatchCohort<%= data.cohort_id %> goodCatchCohort"><%= data.cohort.cohort_name %></h2>
+    <div class="bigRedButton">
+      <button class="memeButton"></button>
+      <audio class="memeHorn" src="/sounds/airHorn.mp3"></audio>
+    </div>
+    <h3 class="goodCatchStudentsHeading">Students</h3>
+    <% data.students.forEach(function(student) { %>
+      <div class="goodCatchCohortStudentsContainer<%= student.id %> goodCatchCohortStudentsContainer">
+        <p class="goodCatchCohortStudents">Name: <%= student.name %> || </p>
+        <p2 class="goodCatchCohortStudentsCatches<%= student.id %> goodCatchCohortStudentsCatches">Catches: <%= student.catches %></p2>
+        <form method="POST" action="/main/<%= cohort.cohort_id %>?_method=POST">
+          <input name="id" type="hidden" value="<%= student.id %>" />
+          <input class="goodCatchPlus" type="submit" value="+" />
+          <!--<input class="goodCatchMinus" type="submit" value="-" />-->
+        </form>
+      </div>
+    <% }) %>
+    <div class="goodCatchInstructorsContainer">
+      <h3 class="goodCatchInstructorsHeading">Instructors</h3>
+      <% data.instructors.forEach(function(instructor) { %>
+        <p class="goodCatchInstructors">Name: <%= instructor.name %></p>
+        <p2 class="goodCatchInstructorsCatches">Catches: <%= instructor.catches %></p2>
+        <input class="goodCatchPlus" type="submit" value="+" />
+      <% }) %>
+    </div>
+</div>
+<script src="/js/main.js"></script>
 <% include ../partials/end.ejs %>

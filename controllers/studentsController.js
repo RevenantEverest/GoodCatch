@@ -5,9 +5,9 @@ module.exports = {
   addStudent(req, res, next) {
     const blankStudent = {
       student: null,
-    };
-    res.locals.student = blankStudent;
-    next();
+    }
+    res.locals.student = blankStudent,
+    next()
   },
 
   index(req, res, next) {
@@ -23,11 +23,11 @@ module.exports = {
   getOne(req, res, next) {
     studentsDB.findById(req.params.id)
       .then((student) => {
-        console.log(student);
-        res.locals.student = student;
-        next();
+        console.log(student),
+        res.locals.student = student,
+        next()
       })
-      .catch(err => next(err));
+      .catch(err => next(err))
   },
 
   create(req, res, next) {
@@ -51,6 +51,16 @@ module.exports = {
   destroy(req, res, next) {
     studentsDB.destroy(req.params.id)
       .then(() => next())
+      .catch(err => next(err));
+  },
+
+  catches(req, res, next) {
+    //console.log(`EASILY IDENTIFIABLE ${req.body}`);
+    studentsDB.incrementCatch(req.body)
+      .then((student) => {
+        res.locals.student = student
+        next();
+      })
       .catch(err => next(err));
   },
 };

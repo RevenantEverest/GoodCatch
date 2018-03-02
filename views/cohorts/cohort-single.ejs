@@ -1,13 +1,20 @@
 <% include ../partials/boilerplate.ejs %>
-  <div class="cohortSingle">
-      <h1 class="cohortSingle<%= data.cohort_id %>"><%= data.cohort_name %></h1>
-      <% for (let student of data){ %>
-        <p class="cohortStudents"><%= student.name %></p>
-      <% } %>
-      <a href="/cohorts/<%= data.cohort_id %>/edit"> Edit </a>
-      <form action="/cohorts/<%= data.cohort_id %>?_method=Delete" method="POST">
-        <input type="Submit" value="Delete" />
-      </form>
-  </div>
-      <a href="/cohorts/">See All Cohorts</a>
+<nav>
+  <a class="navBar" href="../">Home</a>
+  <a class="navBar" href="../cohorts">Cohorts</a>
+  <a class="navBar" href="../instructors">Instructors</a>
+  <a class="navBar" href="../students">Students</a>
+</nav>
+<div class="cohortSingle">
+    <h1 class="cohortSingle<%= data.cohort_id %>"><%= data.cohort.cohort_name %></h1>
+    <% data.students.forEach(function(student) { %>
+      <p class="cohortStudents"><%= student.name %></p>
+    <% }) %>
+    <a href="/cohorts/<%= data.cohort_id %>/edit"> Edit </a>
+    <form action="/cohorts/<%= data.cohort_id %>?_method=Delete" method="POST">
+      <input type="Submit" value="Delete" />
+    </form>
+</div>
+    <a href="/cohorts/">See All Cohorts</a>
+
 <% include ../partials/end.ejs %>

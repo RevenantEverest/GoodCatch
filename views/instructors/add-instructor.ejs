@@ -1,4 +1,10 @@
 <% include ../partials/boilerplate.ejs %>
+  <nav>
+    <a class="navBar" href="../">Home</a>
+    <a class="navBar" href="../cohorts">Cohorts</a>
+    <a class="navBar" href="../instructors">Instructors</a>
+    <a class="navBar" href="../students">Students</a>
+  </nav>
   <h1 class="addInstructorHeading">Add Instructor</h1>
   <form  class="addFormInstructor" method="POST" action="/instructors">
     <input class="addInput" name="instructor" type="text" placeholder="Instructor Name" />

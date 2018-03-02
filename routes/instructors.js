@@ -7,7 +7,7 @@ const views = require(`../controllers/viewsController`);
 
 const instructorsRouter = express.Router();
 
-instructorsRouter.get(`/:id/edit`, instructorsController.getOne, views.showEditFormInstructor);
+instructorsRouter.get(`/:id/edit`, cohortsController.index, instructorsController.getOne, views.showEditFormInstructor);
 instructorsRouter.get(`/new`, cohortsController.index, instructorsController.addInstructor, views.showAddFormInstructor);
 
 instructorsRouter.route(`/:id`)

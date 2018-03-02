@@ -6,6 +6,15 @@ body{
   font-size: 30px;
 }
 
+a{
+  text-decoration: none;
+  color: pink;
+}
+
+a:hover{
+  color: grey;
+}
+
 /*================ COHORTS ================*/
 
 
@@ -23,5 +32,83 @@ body{
 /*================ INSTRUCTORS ================*/
 
 
+
+/*---------------- END ----------------*/
+
+
+/*================ MAIN ================*/
+
+.goodCatchCohortStudents{
+  display: inline-block;
+}
+
+.goodCatchPlus{
+  display: inline;
+  margin-left: 20px;
+  border-radius: 16px;
+  padding: 2px 20px 2px 20px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800px;
+  font-size: 20px;
+}
+
+.goodCatchMinus{
+  display: inline;
+  margin-left: 10px;
+}
+
+.memeButton {
+  border-radius: 400px;
+  margin-left: 590px;
+  height: 300px;
+  width: 300px;
+  background-color: red;
+}
+
+.goodCatchCohort {
+  margin-left: 630px;
+  outline-style: solid;
+  outline-color: #dedede;
+  padding: 10px 50px 10px 50px;
+  display: inline-block;
+}
+
+.goodCatchCohortStudents {
+  font-size: 20px;
+}
+
+.goodCatchCohortStudentsCatches {
+  font-size: 20px;
+}
+
+.goodCatchInstructorsContainer {
+  margin-top: -11.3em;
+  margin-left: 500px;
+}
+
+.goodCatchInstructors {
+  font-size: 20px;
+}
+
+.goodCatchInstructorsCatches {
+  font-size: 20px;
+  display: inline-block;
+}
+
+.goodCatchStudentsHeading {
+  display: inline-block;
+  padding: 10px 20px 10px 20px;
+  border-style: solid;
+  border-radius: 32px;
+  border-color: #dedede;
+}
+
+.goodCatchInstructorsHeading {
+  display: inline-block;
+  padding: 10px 20px 10px 20px;
+  border-style: solid;
+  border-radius: 32px;
+  border-color: #dedede;
+}
 
 /*---------------- END ----------------*/

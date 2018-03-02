@@ -6,10 +6,17 @@ module.exports = {
   },
 
   findAllStudents(id) {
-    return db.any(`SELECT cohorts.cohort_id AS cohort_id, name, catches
+    return db.any(`SELECT cohorts.cohort_id AS cohort_id, name, catches, id
       FROM cohorts
       JOIN students
       ON students.cohort_id = cohorts.cohort_id
+      WHERE cohorts.cohort_id = $1 ORDER BY name`, id)
+  },
+
+  findAllInstructors(id) {
+    return db.any(`SELECT cohorts.cohort_id AS cohort_id, name, catches
+      FROM cohorts JOIN instructors
+      ON instructors.cohort_id = cohorts.cohort_id
       WHERE cohorts.cohort_id = $1`, id)
   },
 

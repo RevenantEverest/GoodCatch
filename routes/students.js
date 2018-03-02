@@ -1,13 +1,14 @@
 const express = require(`express`);
 
 const studentsController = require(`../controllers/studentsController`);
+const cohortsController = require(`../controllers/cohortsController`);
 
 const views = require(`../controllers/viewsController`);
 
 const studentsRouter = express.Router();
 
-//studentsRouter.get(`/:id/edit`, studentsController.getOne, views.showEditFormStudent);
-//studentsRouter.get(`/new`, studentsController.addStudent, views.showAddFormStudent);
+studentsRouter.get(`/:id/edit`, cohortsController.index, studentsController.getOne, views.showEditFormStudents);
+studentsRouter.get(`/new`, cohortsController.index, studentsController.addStudent, views.showAddFormStudents);
 
 studentsRouter.route(`/:id`)
   .get(studentsController.getOne, views.showOneStudent)

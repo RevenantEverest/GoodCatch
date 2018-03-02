@@ -1,7 +1,14 @@
 <% include ../partials/boilerplate.ejs %>
+<nav>
+  <a class="navBar" href="../">Home</a>
+  <a class="navBar" href="../cohorts">Cohorts</a>
+  <a class="navBar" href="../instructors">Instructors</a>
+  <a class="navBar" href="../students">Students</a>
+</nav>
   <h1 class="InstructorSingle">INSTRUCTOR</h1>
   <div class="instructorSingleContainer">
-      <p class="instructorSingle"><%= data.name %></p>
+      <p class="instructorSingle">Name: <%= data.name %></p>
+      <p class="instructorSingle">Cohort: <%= data.cohort_name %></p>
       <a href="/instructors/<%= data.id %>/edit">Edit</a>
   </div>
   <script src="/js/main.js"></script>

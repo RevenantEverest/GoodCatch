@@ -1,3 +1,24 @@
+const express = require(`express`);
+
+const studentsDB = require(`../models/studentsDB`);
+
+$(document).ready(function () {
+  $(`.goodCatchPlus`).click(console.log(`Please`));
+})
+
+function incrementCatch(){
+  let addButton = document.querySelector(`.goodCatchPlus`);
+  addButton.addEventListener(`click`, function(){
+    console.log(`Fuck`)
+  })
+
+  }
+
+function yaBoi () {
+  //studentsDB.incrementCatch();
+  console.log(`Clicked Bitch`);
+}
+
 function addButtonCohort(){
   if(window.location.pathname == `/cohorts` || window.location.pathname == `/cohorts/`){
     let addButton = document.querySelector(`.addCohort`);
@@ -25,25 +46,9 @@ function addButtonStudent(){
     })
   }
 }
-
-function playHorn() {
-  console.log(`Memes Up and running`);
-  let sound = document.querySelector(`.memeHorn`);
-  //sound.currentTime = 0;
-  sound.play();
-}
-
-function memeButton() {
-  let button = document.querySelector(`.memeButton`);
-  button.addEventListener(`click`, function () {
-    console.log(`clicked`)
-    playHorn();
-  })
-}
-
 console.log(`Up and running`);
 
+incrementCatch();
 addButtonStudent();
 addButtonInstructor();
 addButtonCohort();
-memeButton();

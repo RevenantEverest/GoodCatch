@@ -2,7 +2,7 @@ const db = require(`../config/connection`);
 
 module.exports = {
   findAll(){
-    return db.any(`SELECT * FROM students`);
+    return db.any(`SELECT * FROM students ORDER BY name`);
   },
 
   findById(id) {
@@ -14,20 +14,26 @@ module.exports = {
   },
 
   save(student) {
-    return db.one(`INSERT students (name, cohort_id)
-    VALUES ($/name/, $/cohort_id/)
+    return db.one(`INSERT INTO students (name, cohort_id, catches)
+    VALUES ($/student/, $/cohort_id/, $/catches/)
     RETURNING *`, student);
   },
 
   update(student) {
     return db.one(`UPDATE students
       SET
-      name = $1
-      cohort_name = $2
-      WHERE id = $/id/`, student);
+      name = $/name/,
+      cohort_id = $/cohort_id/
+      WHERE id = $/id/
+      RETURNING *`, student);
   },
 
   destroy(id) {
     return db.none(`DELETE FROM students WHERE id = $1`, id);
-  }
+  },
+
+  incrementCatch(id) {
+    return db.one(`UPDATE students SET catches = catches + 1 WHERE id = $/id/
+      RETURNING *`, id);
+  },
 };

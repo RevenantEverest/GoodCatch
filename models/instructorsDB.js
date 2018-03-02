@@ -2,7 +2,7 @@ const db = require(`../config/connection`);
 
 module.exports = {
   findAll(){
-    return db.any(`SELECT * FROM instructors`);
+    return db.any(`SELECT * FROM instructors ORDER BY name`);
   },
 
   findById(id) {
@@ -22,7 +22,7 @@ module.exports = {
   update(instructor) {
     return db.one(`UPDATE instructors
       SET
-      name = $/name/
+      name = $/name/ ,
       cohort_id = $/cohort_id/
       WHERE id = $/id/
       RETURNING *`, instructor);

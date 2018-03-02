@@ -1,3 +1,20 @@
 <% include ../partials/boilerplate.ejs %>
+<nav>
+  <a class="navBar" href="../">Home</a>
+  <a class="navBar" href="../cohorts">Cohorts</a>
+  <a class="navBar" href="../instructors">Instructors</a>
+  <a class="navBar" href="../students">Students</a>
+</nav>
   <h1>Add Student</h1>
+  <form class="addFormStudent" method="POST" action="/students">
+    <input class="addInput" name="student" type="text" placeholder="Student Name" />
+    <input class="addInput" name="catches" type="hidden" value="0" />
+    <select name="cohort_id">
+      <% cohorts.forEach(cohort => { %>
+        <option value="<%= cohort.cohort_id %>"><%= cohort.cohort_name %></option>
+      <% }) %>
+    </select>
+    <input class="addInputSubmit" type="submit" value="Submit" />
+  </form>
+  <p class="noCohortInfo">Is your cohort not listed? add it <a class="linkToAddCohort" href="../cohorts/new">here</a>!</p>
 <% include ../partials/end.ejs %>

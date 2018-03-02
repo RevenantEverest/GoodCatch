@@ -17,5 +17,11 @@
   "bugs": {
     "url": "https://github.com/RevenantEverest/GoodCatch/issues"
   },
-  "homepage": "https://github.com/RevenantEverest/GoodCatch#readme"
+  "homepage": "https://github.com/RevenantEverest/GoodCatch#readme",
+
+  "engines": {
+    "node": "6.11.4"
+
+  }
+
 }

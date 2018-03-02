@@ -3,20 +3,21 @@
 
 COHORTS:
 
-> Add functionality to edit-cohort
+> Add functionality to edit-cohort ✔
+> List students of that cohort ✔
 
 
 INSTRUCTORS:
 
-> Add functionality to edit-instructor
-> Add functionality to add-instructor
-> Add functionality to instructors-index
+> Add functionality to edit-instructor ✔
+> Add functionality to add-instructor ✔
+> Add functionality to instructors-index ✔
 
 STUDENTS:
 
-> Add functionality to edit-student
-> Add functionality to add-student
-> Add functionality to students-index
+> Add functionality to edit-student ✔
+> Add functionality to add-student ✔
+> Add functionality to students-index ✔
 
 /*================ FEATURES ================*/
 

@@ -14,7 +14,7 @@ module.exports = {
 
   showOneCohort(req, res, next) {
     res.render(`cohorts/cohort-single`, {
-      data: res.locals.cohort,
+      data: {cohort: res.locals.cohort, students: res.locals.students},
     });
     next();
   },
@@ -63,7 +63,7 @@ module.exports = {
 
   showEditFormInstructor(req, res) {
     res.render(`instructors/edit-instructor`, {
-      data: res.locals.instructors,
+      data: res.locals.instructor,
     });
   },
 
@@ -119,4 +119,13 @@ module.exports = {
 
   /*-------- END --------*/
 
+  showMain(req, res){
+    res.render(`main/main.ejs`, {
+      data: {cohort: res.locals.cohort, students: res.locals.students, instructors: res.locals.instructors},
+    });
+  },
+
+  handleUpdateCatch(req, res){
+    res.redirect(`/main/${req.params.id}`)
+  },
 };

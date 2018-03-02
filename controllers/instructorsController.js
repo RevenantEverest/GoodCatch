@@ -31,6 +31,7 @@ module.exports = {
   create(req, res, next) {
     instructorsDB.save(req.body)
       .then((instructor) => {
+        console.log(instructor);
         res.locals.instructor = instructor;
         next();
       })
