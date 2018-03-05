@@ -1,4 +1,4 @@
-\c ga_db;
+-- \c ga_db;
 
 DROP TABLE IF EXISTS instructors;
 DROP TABLE IF EXISTS students;
